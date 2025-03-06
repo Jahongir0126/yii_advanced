@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][]=['label'=>'Products',
 $this->params['breadcrumbs'][]= $this->title;
 ?>
 
+
 <div class="product-create">
     <?php $form = ActiveForm::begin();?>
 
