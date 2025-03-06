@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][]= $this->title;
 <div>
     <div class="d-flex justify-content-between align-items-center">
     <h1><?= Html::encode($this->title) ?> </h1>
-        <?= Html::a('Create Product',['product/create','class'=>'btn btn-primary']) ?>
+        <?= Html::a('Create Product',['product/create-product'],['class'=>'btn btn-primary']) ?>
     </div>
 
 
@@ -38,17 +38,17 @@ $this->params['breadcrumbs'][]= $this->title;
             <td> <?= Html::encode($product->price) ?></td>
             <td> <?= Html::encode($product->description) ?></td>
             <td> <?= Html::encode($product->created_at) ?></td>
-                <td> <?= Html::a('Update',['product/update', 'id'=>
-                    $product->id], [
-                            'class'=>'btn btn-warning'
-                    ]) ?>
-                    <?= Html::a('Delete',['product/delete','id'=>$product->id],[
-                            'class'=>'btn btn-danger',
-                        'data'=>[
-                                'confirm'=>'Are you sure to delete product',
-                            'method'=>'post',
+                <td> <?= Html::a(
+                        'Update',
+                        ['product/update-product', 'id'=>$product->id],
+                        ['class'=>'btn btn-warning']) ?>
+
+                     <?= Html::a(
+                            'Delete',
+                            ['product/delete-product','id'=>$product->id],
+                            ['class'=>'btn btn-danger','data'=>['confirm'=>'Are you sure to delete product','method'=>'post',
                         ]
-                    ]) ?>
+                     ]) ?>
                 </td>
         </tr>
         <?php endforeach; ?>

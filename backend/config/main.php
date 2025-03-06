@@ -17,7 +17,7 @@ return [
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\Users',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
@@ -35,15 +35,22 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'auth/error',
         ],
-
+        'defaultRoute' => 'auth/index',
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'products/create'=>'product/create',
-                'products'=>'product/index',
+                '' => 'site/index',
+                'products/create'=>'product/create-product',
+                'product'=>'product/get-product',
+                'delivery'=>'delivery/get-delivery',
+                'login' => 'auth/login',
+                'logout' => 'auth/logout',
+                'signup' => 'auth/signup',
+                'error' => 'auth/error',
+
             ],
         ],
 

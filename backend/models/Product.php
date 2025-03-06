@@ -17,8 +17,10 @@ class Product extends ActiveRecord
             [['name', 'price'], 'required'],
             [['price'], 'number'],
             [['description'], 'string'],
+            [['delivery_id'], 'integer'],
             [['created_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
+            [['delivery_id'], 'exist', 'targetClass' => Delivery::class, 'targetAttribute' => 'id'],
         ];
     }
     public function attributeLabels()

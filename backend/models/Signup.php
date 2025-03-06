@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
-use Yii;
-use yii\base\Model;
 use common\models\Users;
+use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * Signup form
  */
-class SignupForm extends Model
+class Signup extends ActiveRecord
 {
     public $username;
     public $email;
