@@ -10,7 +10,6 @@ class Delivery extends ActiveRecord
         return 'delivery';
 
     }
-
     public function rules(){
         return [
             [['name','type'], 'required'],
@@ -20,7 +19,6 @@ class Delivery extends ActiveRecord
             [['created_at'], 'safe'],
         ];
     }
-
     public function attributeLabels()
     {
 

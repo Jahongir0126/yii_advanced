@@ -46,6 +46,7 @@ return [
                 'products/create'=>'product/create-product',
                 'product'=>'product/get-product',
                 'delivery'=>'delivery/get-delivery',
+                'product-details'=>'product-details/get-product-details',
                 'login' => 'auth/login',
                 'logout' => 'auth/logout',
                 'signup' => 'auth/signup',

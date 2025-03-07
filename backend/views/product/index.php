@@ -40,7 +40,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td> <?= $product->delivery ? Html::encode($product->delivery->name . ' (' . $product->delivery->type . ')')
                         :'Нет доставки' ?></td>
                 <td> <?= Html::encode($product->created_at) ?></td>
-                <td> <?= Html::a(
+                <td>
+                    <?= Html::a('Create Details', ['product-details/create-product-details', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a(
                         'Update',
                         ['product/update-product', 'id' => $product->id],
                         ['class' => 'btn btn-warning']) ?>
@@ -51,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ['class' => 'btn btn-danger', 'data' => ['confirm' => 'Are you sure to delete product', 'method' => 'post',
                         ]
                         ]) ?>
+
                 </td>
             </tr>
         <?php endforeach; ?>

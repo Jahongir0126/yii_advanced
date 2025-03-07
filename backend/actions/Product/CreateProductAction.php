@@ -14,7 +14,7 @@ class CreateProductAction extends Action
 
     public function run()
     {
-        $model = new Product();
+        $products = new Product();
         $deliveryOptions = Delivery::find()
             ->select(['id', "CONCAT(name, ' (', type, ')') as name_with_type"]) // Объединяем name и type
             ->asArray() // Сортируем по названию
@@ -23,14 +23,14 @@ class CreateProductAction extends Action
 
         $deliveryOptions = array_column($deliveryOptions, 'name_with_type', 'id');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save() && $model->validate()) {
+        if ($products->load(Yii::$app->request->post()) && $products->save() && $products->validate()) {
             Yii::$app->session->setFlash('success', 'product successful created');
 
             return $this->controller->redirect(['/product']);
 
         }
         return $this->controller->render('create', [
-            'model' => $model,
+            'products' => $products,
             'deliveryOptions' => $deliveryOptions,
         ]);
 
