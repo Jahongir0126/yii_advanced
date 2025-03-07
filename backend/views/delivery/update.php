@@ -8,7 +8,7 @@ use \yii\helpers\Html;
 use \yii\widgets\ActiveForm;
 
 $this->title='Product update';
-$this->params['breadcrumbs'][] = ['label' => 'Delivery'];
+$this->params['breadcrumbs'][] = ['label' => 'Delivery','url'=>['get-delivery']];
 $this->params['breadcrumbs'][] = 'Update';
 
 ?>

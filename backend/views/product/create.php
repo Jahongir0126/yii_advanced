@@ -8,7 +8,7 @@ use yii\bootstrap5\Html;
 
 $this->title = 'Add product';
 $this->params['breadcrumbs'][]=['label'=>'Products',
-    'url'=>['index']];
+    'url'=>['/product']];
 $this->params['breadcrumbs'][]= $this->title;
 ?>
 
@@ -19,6 +19,9 @@ $this->params['breadcrumbs'][]= $this->title;
    <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="product-form">
+        <?= $form->field($model, 'delivery_id')->dropDownList($deliveryOptions, [
+            'prompt' => 'Выберите бренд доставки',
+        ]) ?>
         <?= $form->field($model,'name')->textInput(['maxlength'=>true])  ?>
         <?= $form->field($model,'price')->textInput(['type'=>'number','step'=>'0.1'])  ?>
         <?= $form->field($model,'description')->textarea(['ros'=>6])  ?>

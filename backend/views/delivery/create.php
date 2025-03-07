@@ -7,7 +7,7 @@ use yii\bootstrap5\Html;
 /** @var backend\models\Delivery $model */
 
 $this->title = 'Add delivery';
-$this->params['breadcrumbs'][]=['label'=>'Delivery'];
+$this->params['breadcrumbs'][]=['label'=>'Delivery', 'url'=>['get-delivery']];
 $this->params['breadcrumbs'][]= $this->title;
 ?>
 
@@ -17,6 +17,7 @@ $this->params['breadcrumbs'][]= $this->title;
    <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="product-form">
+
         <?= $form->field($model,'name')->textInput(['maxlength'=>true])  ?>
         <?= $form->field($model,'delivery_product')->textInput(['maxlength'=>true])  ?>
         <?= $form->field($model,'type')->textInput()  ?>

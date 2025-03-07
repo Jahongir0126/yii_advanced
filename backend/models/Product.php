@@ -14,7 +14,7 @@ class Product extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'price'], 'required'],
+            [['name', 'price','delivery_id'], 'required'],
             [['price'], 'number'],
             [['description'], 'string'],
             [['delivery_id'], 'integer'],
@@ -31,6 +31,12 @@ class Product extends ActiveRecord
             'price'=>'Product Price',
             'description'=>'Product Description',
             'created_at'=>'Created Date',
+            'delivery_id' => 'Delivery Brand',
         ];
     }
+    public function getDelivery()
+    {
+        return $this->hasOne(Delivery::class, ['id' => 'delivery_id']);
+    }
+
 }

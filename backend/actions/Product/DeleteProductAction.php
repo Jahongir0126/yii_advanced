@@ -16,6 +16,6 @@ class DeleteProductAction extends Action
         }else{
             Yii::$app->session->setFlash('error','Product not found');
         }
-        return $this->controller->redirect(['index']);
+        return $this->controller->redirect(['/product']);
     }
 }

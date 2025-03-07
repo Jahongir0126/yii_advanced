@@ -17,7 +17,7 @@ class DeleteDeliveryAction extends Action
         }else{
             Yii::$app->session->setFlash('error', 'Delivery not found');
         }
-        return $this->controller->redirect(['delivery']);
+        return $this->controller->redirect(['/delivery']);
 
     }
 }
